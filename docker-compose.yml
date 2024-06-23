@@ -1,0 +1,24 @@
+services:
+  necesse:
+    container_name: necesse-server
+    image: solareon/necesse-dedicated:latest
+    tty: true
+    stdin_open: true
+    environment:
+      - "TZ=America/Fortaleza"
+      - "WORLD=mundinhoverde"
+      - "PORT=14159"
+      - "SLOTS=10"
+      - "MOTD=A Necesse server powered by Docker!"
+      - "PASSWORD=grn*423"
+      - "PAUSE=true"
+      - "GIVE_CLIENTS_POWER=false"
+      - "MAX_LATENCY=30"
+      - "LOGGING=true"
+      - "LANGUAGE=en"
+      - "ZIP_SAVES=true"
+      - "ADDITIONAL_ARGS="
+      - "STEAMCMD_UPDATE_ARGS="
+    ports:
+      - "14159:14159/udp"
+    restart: unless-stopped
